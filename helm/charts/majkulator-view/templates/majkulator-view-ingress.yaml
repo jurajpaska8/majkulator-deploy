@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: {{ .Release.Name }}-majkulator-view
+  name: {{ .Release.Name }}-frontend
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-prod
     nginx.ingress.kubernetes.io/rewrite-target: /
@@ -9,17 +9,17 @@ spec:
   ingressClassName: nginx
   tls:
     - hosts:
-        - {{ .Release.Name }}-majkulator-view.{{ .Release.Namespace }}.{{ .Values.global.domain }}
-      secretName: {{ .Release.Name }}-majkulator-view.{{ .Release.Namespace }}.{{ .Values.global.domain }}-tls
+        - {{ .Release.Name }}-frontend.{{ .Release.Namespace }}.{{ .Values.global.domain }}
+      secretName: {{ .Release.Name }}-frontend.{{ .Release.Namespace }}.{{ .Values.global.domain }}-tls
   rules:
-    - host: {{ .Release.Name }}-majkulator-view.{{ .Release.Namespace }}.{{ .Values.global.domain }}
+    - host: {{ .Release.Name }}-frontend.{{ .Release.Namespace }}.{{ .Values.global.domain }}
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: {{ .Release.Name }}-majkulator-view
+                name: {{ .Release.Name }}-frontend
                 port:
                   number: 80
                 

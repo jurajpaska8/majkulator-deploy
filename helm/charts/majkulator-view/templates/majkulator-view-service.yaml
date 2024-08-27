@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ .Release.Name }}-majkulator-view
+  name: {{ .Release.Name }}-frontend
 spec:
   selector:
-    app: {{ .Release.Name }}-majkulator-view
+    app: {{ .Release.Name }}-frontend
   ports:
     - protocol: TCP
       port: 80

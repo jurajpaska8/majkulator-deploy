@@ -1,6 +1,6 @@
 global:
   domain: "OverrideMeInMakefile"
-majkulator-view:
+frontend:
   image: 
     tag: "0.1.0-c3842b9"
   # Switch between Development / Production TODO change to this and include appsecrets when done
