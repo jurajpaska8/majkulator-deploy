@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-majkulator-view
+  labels:
+    app: {{ .Release.Name }}-majkulator-view
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}-majkulator-view
+  template:
+    metadata:
+      name: {{ .Release.Name }}-majkulator-view
+      labels:
+        app: {{ .Release.Name }}-majkulator-view
+    spec:
+      containers:
+        - name: {{ .Release.Name }}-majkulator-view
+          image: "{{ .Values.image.repository }}:{{.Values.image.tag}}"
+          imagePullPolicy: "{{ .Values.image.pullPolicy }}"
+          ports:
+            - containerPort: 8080
+          envFrom:
+            - configMapRef:
+                name: {{ .Release.Name }}-majkulator-view
+            - secretRef:
+                name: {{ .Release.Name }}-majkulator-view
+      restartPolicy: Always
+      

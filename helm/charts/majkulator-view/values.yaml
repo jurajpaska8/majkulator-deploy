@@ -1,0 +1,7 @@
+image:
+  repository: jurajpaska8/majkulator
+  tag: "OverrideMeInValues"
+  pullPolicy: IfNotPresent
+
+aspNetCoreEnv: "Production" # Development
+efMigrate: false

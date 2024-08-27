@@ -1,0 +1,16 @@
+global:
+  domain: "OverrideMeInMakefile"
+majkulator-view:
+  image: 
+    tag: "0.1.0-c3842b9"
+  # Switch between Development / Production TODO change to this and include appsecrets when done
+  aspNetCoreEnv: "Development"
+  # If new migration is added into Infrastructure/Migrations, set to true
+  efMigrate: true # TODO change to false by default
+  
+# Change PVC reclaim policy to retain - needed to do manually: https://kubernetes.io/docs/tasks/administer-cluster/change-pv-reclaim-policy/
+postgresql:
+  auth:
+    database: majkulator
+    username: test
+    password: test
