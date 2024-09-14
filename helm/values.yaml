@@ -1,5 +1,5 @@
 global:
-  domain: "OverrideMeInMakefile"
+  domain: "offli.eu"
 frontend:
   image: 
     tag: "0.1.0-a5dab2b"
