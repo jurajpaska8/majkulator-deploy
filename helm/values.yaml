@@ -2,7 +2,7 @@ global:
   domain: "OverrideMeInMakefile"
 frontend:
   image: 
-    tag: "0.1.0-c3842b9"
+    tag: "0.1.0-a5dab2b"
   # Switch between Development / Production TODO change to this and include appsecrets when done
   aspNetCoreEnv: "Development"
   # If new migration is added into Infrastructure/Migrations, set to true
