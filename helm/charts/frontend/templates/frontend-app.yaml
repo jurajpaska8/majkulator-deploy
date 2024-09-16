@@ -6,6 +6,7 @@ metadata:
   annotations:
     argocd-image-updater.argoproj.io/image-list: frontend=jurajpaska8/majkulator
     argocd-image-updater.argoproj.io/write-back-method: git
+
 spec:
   project: {{ "projectName" | quote }}
   source:
