@@ -12,6 +12,9 @@ spec:
     path: {{ "helm" | quote }}
     repoURL: {{ "https://github.com/jurajpaska8/majkulator-deploy.git" | quote }}
     targetRevision: {{ "master" | quote }}
+    helm:
+      valueFiles:
+        - values.yaml
 
   destination:
     namespace: {{ "default" | quote }}
