@@ -10,3 +10,7 @@ spec:
   source:
     path:{{ "helm" | quote }}
     repoURL:{{ "https://github.com/jurajpaska8/majkulator-deploy.git" | quote }}
+  destination:
+    namespace: {{ "default" | quote }}
+    name: {{ "abcdefg" }}
+{{/*  TODO*/}}
