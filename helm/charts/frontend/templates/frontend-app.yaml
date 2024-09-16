@@ -7,10 +7,11 @@ metadata:
     argocd-image-updater.argoproj.io/image-list: frontend=jurajpaska8/majkulator
     argocd-image-updater.argoproj.io/write-back-method: git
 spec:
+  project: {{ "projectName" | quote }}
   source:
     path:{{ "helm" | quote }}
     repoURL:{{ "https://github.com/jurajpaska8/majkulator-deploy.git" | quote }}
   destination:
     namespace: {{ "default" | quote }}
-    name: {{ "abcdefg" }}
+    name: {{ "destinationName" | quote }}
 {{/*  TODO*/}}
