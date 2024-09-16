@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: {{ .Release.Name }}-frontend
+  name: {{ .Release.Name }}-frontend-app
   namespace: argocd
   annotations:
     argocd-image-updater.argoproj.io/image-list: frontend=jurajpaska8/majkulator
@@ -11,7 +11,7 @@ spec:
   source:
     path: {{ "helm" | quote }}
     repoURL: {{ "https://github.com/jurajpaska8/majkulator-deploy.git" | quote }}
-    targetRevision: {{ "targetRevision" | quote }}
+    targetRevision: {{ "master" | quote }}
 
   destination:
     namespace: {{ "default" | quote }}
