@@ -4,5 +4,9 @@ metadata:
   name: {{ .Release.Name }}-frontend
   namespace: argocd
   annotations:
-    argocd-image-updater.argoproj.io/image-list: myapp=jurajpaska8/majkulator
+    argocd-image-updater.argoproj.io/image-list: frontend=jurajpaska8/majkulator
     argocd-image-updater.argoproj.io/write-back-method: git
+spec:
+  source:
+    path:{{ "helm" | quote }}
+    repoURL:{{ "https://github.com/jurajpaska8/majkulator-deploy.git" | quote }}
