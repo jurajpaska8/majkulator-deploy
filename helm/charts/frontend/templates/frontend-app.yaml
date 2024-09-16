@@ -9,8 +9,10 @@ metadata:
 spec:
   project: {{ "projectName" | quote }}
   source:
-    path:{{ "helm" | quote }}
-    repoURL:{{ "https://github.com/jurajpaska8/majkulator-deploy.git" | quote }}
+    path: {{ "helm" | quote }}
+    repoURL: {{ "https://github.com/jurajpaska8/majkulator-deploy.git" | quote }}
+    targetRevision: {{ "targetRevision" | quote }}
+
   destination:
     namespace: {{ "default" | quote }}
     name: {{ "destinationName" | quote }}
